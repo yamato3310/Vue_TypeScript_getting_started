@@ -1,24 +1,19 @@
-# ec_site
+# wakwel 0715 Vue&TypeScript勉強会資料
+## 今回の目的
+wakwelのフロントの構成が、Vue3.0 TypeScript monacaです。
+今後のメンバーを増えることを想定して、wakwelのメンバーに向けたVue TypeScriptのキャッチアップ用の教材です。
+細かい仕様を解説をするよりも、まずはコードを書いてみてコードを書くことの抵抗をなくせるものを目指しています
 
-## Project setup
-```
-npm install
-```
+## 内容
+ECサイトを作ります。
+ベースのコンポーネントなどは予め用意をしているので、コードを付け足しながら気軽にVueに慣れてもらいます。
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+---
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## step1 Vue TypeScript とは？
 
-### Lints and fixes files
-```
-npm run lint
-```
+## step2 Vue Routerを触ってみよう
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## step3 Vuex を触ってみよう
+
+## step4 買い物かごページを作ってみよう
