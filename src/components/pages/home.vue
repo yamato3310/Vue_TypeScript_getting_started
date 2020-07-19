@@ -1,8 +1,9 @@
 <template>
   <div>
     <div>home</div>
-    <section>
+    <section id="card-list">
       <card 
+        id="card-container"
         v-for="product in products" 
         :key="product.id" 
         :product=product
@@ -39,5 +40,13 @@ export default Vue.extend({
 </script>
 
 <style>
+#card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
+#card-container {
+  flex-direction: column;
+}
 </style>

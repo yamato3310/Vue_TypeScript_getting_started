@@ -25,5 +25,23 @@ export default Vue.extend({
 <style>
 .card-container {
   border: 1px solid;
+  width: 20vw;
+  height: 60vh;
+  margin: 5vw;
+}
+
+.card-container figure {
+  margin: 0;
+  width: 20vw;
+  text-align: center;
+}
+
+.card-container section {
+  height: 30vh;
+  padding: 2.5px;
+}
+
+.card-container p {
+  width: 15vw;
 }
 </style>
