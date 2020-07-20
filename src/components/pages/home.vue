@@ -1,30 +1,54 @@
 <template>
-  <div>
+  <div class="home__container">
     <div>home</div>
     <section id="card-list">
       <card 
         id="card-container"
         v-for="product in products" 
         :key="product.id" 
-        :product=product
+        :product="product"
+        :click="clickCard"
       /> 
     </section>
+    <modal
+      v-show="selectProduct"
+      :product="selectProduct"
+      :click="modalDelete"
+    >
+      <button>購入</button>
+    </modal>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Card from '../../components/organisms/home/card.vue';
+import Card from '../organisms/home/card.vue';
+import Modal from '../organisms/home/modal.vue';
 import { getProducts } from '../../helper/getProducts';
 import { Product } from '../../@types/Product';
+
+type State = {
+  selectProduct: Product | null;
+}
 
 export default Vue.extend({
   // importしてきたコンポーネントはここで定義をしないと使えない
   components: {
     Card,
+    Modal
   },
-  data() {
+  methods: {
+    clickCard(product: Product) {
+      console.log(product)
+      this.selectProduct = product
+    },
+    modalDelete() {
+      this.selectProduct = null
+    }
+  },
+  data(): State {
     return {
+      selectProduct: null
     };
   },
   computed: {
@@ -48,5 +72,9 @@ export default Vue.extend({
 
 #card-container {
   flex-direction: column;
+}
+
+.home__container {
+  position: relative;
 }
 </style>

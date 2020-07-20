@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" @click="click(product)">
     <figure>
       <img :src="product.image">
     </figure>
@@ -18,6 +18,7 @@ import { Product } from '../../../@types/Product';
 export default Vue.extend({
   props: {
     product: Object as PropType<Product>,
+    click: Function,
   },
 });
 </script>
