@@ -1,9 +1,8 @@
 <template>
   <div class="home__container">
-    <div>home</div>
     <section id="card-list">
       <card 
-        id="card-container"
+        class="card-container--margin"
         v-for="product in products" 
         :key="product.id" 
         :product="product"
@@ -11,11 +10,11 @@
       /> 
     </section>
     <modal
-      v-show="selectProduct"
+      v-if="selectProduct"
       :product="selectProduct"
       :click="modalDelete"
     >
-      <button>購入</button>
+      <button @click="addStoreProduct(selectProduct)">購入</button>
     </modal>
   </div>
 </template>
@@ -27,7 +26,7 @@ import Modal from '../organisms/home/modal.vue';
 import { getProducts } from '../../helper/getProducts';
 import { Product } from '../../@types/Product';
 
-type State = {
+interface State {
   selectProduct: Product | null;
 }
 
@@ -35,20 +34,23 @@ export default Vue.extend({
   // importしてきたコンポーネントはここで定義をしないと使えない
   components: {
     Card,
-    Modal
+    Modal,
   },
   methods: {
     clickCard(product: Product) {
-      console.log(product)
-      this.selectProduct = product
+      this.selectProduct = product;
     },
     modalDelete() {
-      this.selectProduct = null
-    }
+      this.selectProduct = null;
+    },
+    addStoreProduct(product: Product) {
+      this.$store.commit('addProduct', product);
+      this.selectProduct = null;
+    },
   },
   data(): State {
     return {
-      selectProduct: null
+      selectProduct: null,
     };
   },
   computed: {
@@ -58,7 +60,7 @@ export default Vue.extend({
     },
   },
   mounted() {
-    console.log(this.products);
+    // console.log(this.products);
   },
 });
 </script>
@@ -70,8 +72,8 @@ export default Vue.extend({
   flex-wrap: wrap;
 }
 
-#card-container {
-  flex-direction: column;
+.card-container--margin {
+  margin: 5vw;
 }
 
 .home__container {

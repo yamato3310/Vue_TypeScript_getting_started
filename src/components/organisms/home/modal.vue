@@ -6,7 +6,7 @@
           <figure class="detail__product-image">
             <img :src="product.image">
           </figure>
-          <section>
+          <section class="detail__product-propaty-list">
             <P>商品名: {{product.name}}</P>
             <p>価格: {{product.price}}</p>
             <p>説明: {{product.detail}}</p>
@@ -40,8 +40,8 @@ export default Vue.extend({
 .modal__background {
   width: 100vw;
   height: 100vh;
-  background-color: gray;
-  opacity: 0.3;
+  background-color: black;
+  opacity: 0.8;
   position: absolute;
 }
 
@@ -64,4 +64,7 @@ export default Vue.extend({
   justify-content: center;
 }
 
+.product-propaty-list {
+  justify-content: center;
+}
 </style>

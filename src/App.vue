@@ -3,8 +3,8 @@
     <div id="nav">
       <!-- リンク先を `to` プロパティに指定します -->
       <!-- デフォルトで `<router-link>` は `<a>` タグとして描画されます -->
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">買い物へ</router-link> |
+      <router-link to="/shoppingCart">買い物カゴへ</router-link>
     </div>
     <!-- ルートとマッチしたコンポーネントがここへ描画されます -->
     <router-view/>
@@ -18,5 +18,4 @@ export default Vue.extend({});
 </script>
 
 <style>
-
 </style>

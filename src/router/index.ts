@@ -9,6 +9,10 @@ const routes: RouteConfig[] = [
     path: '/',
     name: 'Home',
     component: Pages.Home,
+  }, {
+    path: '/shoppingCart',
+    name: 'ShoppingCart',
+    component: Pages.ShoppingCart,
   },
 ];
 

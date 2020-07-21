@@ -28,7 +28,6 @@ export default Vue.extend({
   border: 1px solid;
   width: 20vw;
   height: 60vh;
-  margin: 5vw;
 }
 
 .card-container figure {
